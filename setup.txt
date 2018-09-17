@@ -1,0 +1,22 @@
+Run the following commands in the terminal:
+
+sudo apt-install -y curl 
+
+Should be asked to enter password for sudo
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+
+sudo apt-get update
+
+apt-cache policy docker-ce
+
+sudo apt-get install -y docker-ce
+
+To run docker without sudo everytime:
+
+sudo usermod -aG docker ${USER}
+
+su ${USER}
+    should be prompted to ask for password here
