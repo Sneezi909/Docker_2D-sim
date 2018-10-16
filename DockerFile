@@ -1,0 +1,20 @@
+# Using the appropriate Python version as base for the simulator
+FROM python:2.7-slim
+
+# Setting up image file system
+WORKDIR /simulator
+COPY . /simulator 
+
+RUN pwd
+WORKDIR simulator
+RUN pwd
+
+# Installing dependencies as stated in simulator/requirements.txt
+RUN pip install --trusted-host pypi.python.org -r requirements.txt
+
+# Running the simulator itself
+
+# Switching into the appropriate directory
+WORKDIR /bin
+ENV NAME World
+RUN cd /simulator && ["python", "runSim.py"]
