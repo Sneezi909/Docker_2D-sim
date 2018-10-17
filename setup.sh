@@ -1,0 +1,1 @@
+# Short script to set up the dependencies inside the docker image
