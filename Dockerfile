@@ -23,3 +23,8 @@ RUN hash -d pip
 RUN apt-get update
 
 CMD echo "Finished updating repos"
+
+# More package installs
+COPY simulator/requirements.txt /requirements
+RUN python --version
+RUN python -m pip install --upgrade pip && pip install --no-cache-dir requirements.txt
